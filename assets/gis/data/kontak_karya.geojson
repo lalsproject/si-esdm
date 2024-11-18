@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "kontak_karya",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 234, "id_per": 93, "Luas": "38,150", "Tahapan": "Eksplorasi Produksi", "SK": "B.143/Pres/3/1997", "No SK": "078.K/20.01/DJG/2004", "Tgl SK Sta": "0001-01-01", "Tgl SK End": "0001-01-01", "Komoditas": "Emas", "Mineral": "Kontrak Karya", "nama_perusahaan": "PT. J. Resources Bolaang Mongondow", "alamat": "Lanud (Boltim), Bakan(Bolmong/Bolsel}" }, "geometry": { "type": "Point", "coordinates": [ 124.450084572502661, 0.643824074228909 ] } },
+{ "type": "Feature", "properties": { "id": 235, "id_per": 94, "Luas": "8,959", "Tahapan": "Produksi", "SK": "B.43/Pres/II/1986", "No SK": "314.K/20.01/DDJP/1998", "Tgl SK Sta": "0001-01-01", "Tgl SK End": "0001-01-01", "Komoditas": "Emas", "Mineral": "Kontrak Karya", "nama_perusahaan": "PT. Meares Soputran Mining", "alamat": "Tokatindung, Likupang  Timur, Minahasa Utara" }, "geometry": { "type": "Point", "coordinates": [ 125.079659639600379, 1.656600551857625 ] } },
+{ "type": "Feature", "properties": { "id": 236, "id_per": 95, "Luas": "30,848.0", "Tahapan": "Eksplorasi Produksi", "SK": "B.143/Pres/3/1997", "No SK": "125.K/20.01/DJP/1999", "Tgl SK Sta": "0001-01-01", "Tgl SK End": "0001-01-01", "Komoditas": "Emas", "Mineral": "Kontrak Karya", "nama_perusahaan": "PT. Tambang Tondano Nusajaya", "alamat": "Minahasa Utara, Kota Bitung" }, "geometry": { "type": "Point", "coordinates": [ 125.060372099090714, 1.639599216488085 ] } },
+{ "type": "Feature", "properties": { "id": 237, "id_per": 96, "Luas": "3,091.00", "Tahapan": "Eksplorasi", "SK": "B.18/Pres/7/1994", "No SK": "115.K/20.01/DJP/200", "Tgl SK Sta": "0001-01-01", "Tgl SK End": "0001-01-01", "Komoditas": "Emas", "Mineral": "Kontrak Karya", "nama_perusahaan": "PT. Gorontalo Sejahtera Mining", "alamat": "Bolaang Mongondow Utara" }, "geometry": { "type": "Point", "coordinates": [ 123.558287362316293, 0.790800371933476 ] } },
+{ "type": "Feature", "properties": { "id": 238, "id_per": 97, "Luas": "42,000", "Tahapan": "Eksplorasi", "SK": "B.143/Pres/3/1997", "No SK": "2511/30/DJM/2009", "Tgl SK Sta": "0001-01-01", "Tgl SK End": "0001-01-01", "Komoditas": "Emas", "Mineral": "Kontrak Karya", "nama_perusahaan": "PT. Tambang Mas Sangihe", "alamat": "Manganitu, Kab. Kep. Sangihe" }, "geometry": { "type": "Point", "coordinates": [ 125.50866212004216, 3.52995063334481 ] } }
+]
+}

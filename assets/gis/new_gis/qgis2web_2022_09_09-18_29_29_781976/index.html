@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/MarkerCluster.css">
+        <link rel="stylesheet" href="css/MarkerCluster.Default.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="js/leaflet.markercluster.js"></script>
+        <script src="data/All_TAMBANG_3.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[0.16667126655935238,123.25144910433504],[2.01237439155977,126.64117402629948]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        map.createPane('pane_GoogleSatelliteHybrid_0');
+        map.getPane('pane_GoogleSatelliteHybrid_0').style.zIndex = 400;
+        var layer_GoogleSatelliteHybrid_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+            pane: 'pane_GoogleSatelliteHybrid_0',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 19
+        });
+        layer_GoogleSatelliteHybrid_0;
+        map.createPane('pane_GoogleSatelit_1');
+        map.getPane('pane_GoogleSatelit_1').style.zIndex = 401;
+        var layer_GoogleSatelit_1 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+            pane: 'pane_GoogleSatelit_1',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 18
+        });
+        layer_GoogleSatelit_1;
+        map.createPane('pane_GoogleMaps_2');
+        map.getPane('pane_GoogleMaps_2').style.zIndex = 402;
+        var layer_GoogleMaps_2 = L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+            pane: 'pane_GoogleMaps_2',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 19
+        });
+        layer_GoogleMaps_2;
+        map.addLayer(layer_GoogleMaps_2);
+        function pop_All_TAMBANG_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">id</th>\
+                        <td>' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Daerah</th>\
+                        <td>' + (feature.properties['Daerah'] !== null ? autolinker.link(feature.properties['Daerah'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Type</th>\
+                        <td>' + (feature.properties['Type'] !== null ? autolinker.link(feature.properties['Type'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Perusahaan</th>\
+                        <td>' + (feature.properties['Perusahaan'] !== null ? autolinker.link(feature.properties['Perusahaan'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">AlamatPerusahaan</th>\
+                        <td>' + (feature.properties['AlamatPerusahaan'] !== null ? autolinker.link(feature.properties['AlamatPerusahaan'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">IdPerusahaan</th>\
+                        <td>' + (feature.properties['IdPerusahaan'] !== null ? autolinker.link(feature.properties['IdPerusahaan'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">IdType</th>\
+                        <td>' + (feature.properties['IdType'] !== null ? autolinker.link(feature.properties['IdType'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">IdDaerah</th>\
+                        <td>' + (feature.properties['IdDaerah'] !== null ? autolinker.link(feature.properties['IdDaerah'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Lokasi</th>\
+                        <td>' + (feature.properties['Lokasi'] !== null ? autolinker.link(feature.properties['Lokasi'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Luas</th>\
+                        <td>' + (feature.properties['Luas'] !== null ? autolinker.link(feature.properties['Luas'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Tahapan</th>\
+                        <td>' + (feature.properties['Tahapan'] !== null ? autolinker.link(feature.properties['Tahapan'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">SK</th>\
+                        <td>' + (feature.properties['SK'] !== null ? autolinker.link(feature.properties['SK'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">NoSK</th>\
+                        <td>' + (feature.properties['NoSK'] !== null ? autolinker.link(feature.properties['NoSK'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">TAwal</th>\
+                        <td>' + (feature.properties['TAwal'] !== null ? autolinker.link(feature.properties['TAwal'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">TSelesai</th>\
+                        <td>' + (feature.properties['TSelesai'] !== null ? autolinker.link(feature.properties['TSelesai'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Komoditas</th>\
+                        <td>' + (feature.properties['Komoditas'] !== null ? autolinker.link(feature.properties['Komoditas'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Status</th>\
+                        <td>' + (feature.properties['Status'] !== null ? autolinker.link(feature.properties['Status'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Ket</th>\
+                        <td>' + (feature.properties['Ket'] !== null ? autolinker.link(feature.properties['Ket'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Foto</th>\
+                        <td>' + (feature.properties['Foto'] !== null ? autolinker.link(feature.properties['Foto'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">RegDate</th>\
+                        <td>' + (feature.properties['RegDate'] !== null ? autolinker.link(feature.properties['RegDate'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_All_TAMBANG_3_0(feature) {
+            switch(String(feature.properties['Type'])) {
+                case 'IUP Logam':
+                    return {
+                pane: 'pane_All_TAMBANG_3',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/red-marker.svg',
+            iconSize: [38.0, 38.0]
+        }),
+                interactive: true,
+            }
+                    break;
+                case 'IUP Non Logam & Batuan':
+                    return {
+                pane: 'pane_All_TAMBANG_3',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/blue-marker.svg',
+            iconSize: [38.0, 38.0]
+        }),
+                interactive: true,
+            }
+                    break;
+                case 'Kontrak Karya':
+                    return {
+                pane: 'pane_All_TAMBANG_3',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/cc-marker.svg',
+            iconSize: [38.0, 38.0]
+        }),
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_All_TAMBANG_3');
+        map.getPane('pane_All_TAMBANG_3').style.zIndex = 403;
+        map.getPane('pane_All_TAMBANG_3').style['mix-blend-mode'] = 'normal';
+        var layer_All_TAMBANG_3 = new L.geoJson(json_All_TAMBANG_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_All_TAMBANG_3',
+            layerName: 'layer_All_TAMBANG_3',
+            pane: 'pane_All_TAMBANG_3',
+            onEachFeature: pop_All_TAMBANG_3,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.marker(latlng, style_All_TAMBANG_3_0(feature));
+            },
+        });
+        var cluster_All_TAMBANG_3 = new L.MarkerClusterGroup({showCoverageOnHover: false,
+            spiderfyDistanceMultiplier: 2});
+        cluster_All_TAMBANG_3.addLayer(layer_All_TAMBANG_3);
+
+        bounds_group.addLayer(layer_All_TAMBANG_3);
+        cluster_All_TAMBANG_3.addTo(map);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'All_TAMBANG<br /><table><tr><td style="text-align: center;"><img src="legend/All_TAMBANG_3_IUPLogam0.png" /></td><td>IUP Logam</td></tr><tr><td style="text-align: center;"><img src="legend/All_TAMBANG_3_IUPNonLogamBatuan1.png" /></td><td>IUP Non Logam & Batuan</td></tr><tr><td style="text-align: center;"><img src="legend/All_TAMBANG_3_KontrakKarya2.png" /></td><td>Kontrak Karya</td></tr></table>': cluster_All_TAMBANG_3,"Google Maps": layer_GoogleMaps_2,"Google Satelit": layer_GoogleSatelit_1,"Google Satellite Hybrid": layer_GoogleSatelliteHybrid_0,}).addTo(map);
+        setBounds();
+        resetLabels([layer_All_TAMBANG_3]);
+        map.on("zoomend", function(){
+            resetLabels([layer_All_TAMBANG_3]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_All_TAMBANG_3]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_All_TAMBANG_3]);
+        });
+        </script>
+    </body>
+</html>

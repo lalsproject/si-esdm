@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 700 700" style="enable-background:new 0 0 700 700;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:none;stroke:#000000;stroke-width:5;}
+	.st2{fill:url(#SVGID_00000170962606990492928920000008170752640340986265_);}
+</style>
+<g transform="translate(104.72241 153.05114)">
+	
+		<image style="overflow:visible;enable-background:new    ;" width="255" height="418" xlink:href="FE3717C4.png"  transform="matrix(1 0 0 1 121.523 145.715)">
+	</image>
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="139.6345" y1="388.3643" x2="144.6476" y2="1.5361" gradientTransform="matrix(1 0 0 -1 104.7224 544.5866)">
+		<stop  offset="0.194" style="stop-color:#4938AF"/>
+		<stop  offset="1" style="stop-color:#2A0000;stop-opacity:0.97"/>
+	</linearGradient>
+	<path class="st0" d="M248.4,543.1c-13,0-114.4-224-114.4-281.9s50-104.9,111.7-104.9c61.7,0,111.7,47,111.7,104.9
+		S257.8,543.1,248.4,543.1z"/>
+	<path class="st1" d="M248.4,543.1c-13,0-114.4-224-114.4-281.9s50-104.9,111.7-104.9c61.7,0,111.7,47,111.7,104.9
+		S257.8,543.1,248.4,543.1z"/>
+	
+		<image style="overflow:visible;enable-background:new    ;" width="229" height="392" xlink:href="FE3717C5.png"  transform="matrix(1 0 0 1 131.523 153.715)">
+	</image>
+	
+		<image style="overflow:visible;opacity:0.35;enable-background:new    ;" width="407" height="410" xlink:href="FE3717C6.png"  transform="matrix(1 0 0 1 199.179 187.59)">
+	</image>
+	
+		<radialGradient id="SVGID_00000113320056827855217060000014132091870283283880_" cx="141.2561" cy="275.3072" r="75.7205" gradientTransform="matrix(1 0 0 -1 104.7224 544.5866)" gradientUnits="userSpaceOnUse">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="1" style="stop-color:#BFBFBF"/>
+	</radialGradient>
+	<path style="fill:url(#SVGID_00000113320056827855217060000014132091870283283880_);" d="M246,345c-41.8,0-75.7-33.9-75.7-75.7
+		c0-41.8,33.9-75.7,75.7-75.7c41.8,0,75.7,33.9,75.7,75.7C321.7,311.1,287.8,345,246,345z"/>
+	
+		<image style="overflow:visible;enable-background:new    ;" width="152" height="152" xlink:href="FE3717C3.png"  transform="matrix(1 0 0 1 170.258 193.559)">
+	</image>
+</g>
+</svg>
