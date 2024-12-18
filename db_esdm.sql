@@ -446,7 +446,7 @@ CREATE TABLE `tbv_tambang` (
 --
 DROP TABLE IF EXISTS `tbv_blog`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`ic`@`localhost` SQL SECURITY DEFINER VIEW `tbv_blog`  AS SELECT `a`.`IdBlog` AS `IdBlog`, `b`.`IdKat` AS `IdKat`, `b`.`Kategori` AS `Kategori`, `a`.`Judul` AS `Judul`, `a`.`Isi` AS `Isi`, `a`.`RegBy` AS `RegBy`, `a`.`Slug` AS `Slug`, `a`.`RegDate` AS `RegDate` FROM ((`tbl_mas_blog` `a` left join `tbl_kat_blog` `b` on(`a`.`Kategori` = `b`.`IdKat`)) left join `tbl_login` `c` on(`a`.`RegBy` = `c`.`IdLogin`))  ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `tbv_blog`  AS SELECT `a`.`IdBlog` AS `IdBlog`, `b`.`IdKat` AS `IdKat`, `b`.`Kategori` AS `Kategori`, `a`.`Judul` AS `Judul`, `a`.`Isi` AS `Isi`, `a`.`RegBy` AS `RegBy`, `a`.`Slug` AS `Slug`, `a`.`RegDate` AS `RegDate` FROM ((`tbl_mas_blog` `a` left join `tbl_kat_blog` `b` on(`a`.`Kategori` = `b`.`IdKat`)) left join `tbl_login` `c` on(`a`.`RegBy` = `c`.`IdLogin`))  ;
 
 -- --------------------------------------------------------
 
@@ -455,7 +455,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`ic`@`localhost` SQL SECURITY DEFINER VIEW `t
 --
 DROP TABLE IF EXISTS `tbv_peti`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`ic`@`localhost` SQL SECURITY DEFINER VIEW `tbv_peti`  AS SELECT `a`.`IdLaporan` AS `IdLaporan`, `a`.`Nama` AS `Nama`, `a`.`Email` AS `Email`, `b`.`IdDaerah` AS `IdDaerah`, `b`.`Daerah` AS `Daerah`, `a`.`Kecamatan` AS `Kecamatan`, `a`.`Kelurahan` AS `Kelurahan`, `a`.`Lokasi` AS `Lokasi`, `a`.`Detail` AS `Detail`, `a`.`Verify` AS `Verify`, `a`.`RegDate` AS `RegDate` FROM (`tbl_laporan` `a` left join `tbl_mas_daerah` `b` on(`a`.`Daerah` = `b`.`IdDaerah`))  ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `tbv_peti`  AS SELECT `a`.`IdLaporan` AS `IdLaporan`, `a`.`Nama` AS `Nama`, `a`.`Email` AS `Email`, `b`.`IdDaerah` AS `IdDaerah`, `b`.`Daerah` AS `Daerah`, `a`.`Kecamatan` AS `Kecamatan`, `a`.`Kelurahan` AS `Kelurahan`, `a`.`Lokasi` AS `Lokasi`, `a`.`Detail` AS `Detail`, `a`.`Verify` AS `Verify`, `a`.`RegDate` AS `RegDate` FROM (`tbl_laporan` `a` left join `tbl_mas_daerah` `b` on(`a`.`Daerah` = `b`.`IdDaerah`))  ;
 
 -- --------------------------------------------------------
 
@@ -464,7 +464,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`ic`@`localhost` SQL SECURITY DEFINER VIEW `t
 --
 DROP TABLE IF EXISTS `tbv_tambang`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`ic`@`localhost` SQL SECURITY DEFINER VIEW `tbv_tambang`  AS SELECT `a`.`IdTambang` AS `IdTambang`, `b`.`IdPerusahaan` AS `IdPerusahaan`, `b`.`Perusahaan` AS `Perusahaan`, `b`.`AlamatPerusahaan` AS `AlamatPerusahaan`, `c`.`IdType` AS `IdType`, `c`.`Type` AS `Type`, `d`.`IdDaerah` AS `IdDaerah`, `d`.`Daerah` AS `Daerah`, `a`.`Lat` AS `Lat`, `a`.`Long` AS `Long`, `a`.`Lokasi` AS `Lokasi`, `a`.`Luas` AS `Luas`, `a`.`Tahapan` AS `Tahapan`, `a`.`SK` AS `SK`, `a`.`NoSK` AS `NoSK`, `a`.`TAwal` AS `TAwal`, `a`.`TSelesai` AS `TSelesai`, `a`.`Komoditas` AS `Komoditas`, `a`.`Status` AS `Status`, `a`.`Ket` AS `Ket`, `a`.`Foto` AS `Foto`, `a`.`RegDate` AS `RegDate` FROM (((`tbl_mas_tambang` `a` left join `tbl_mas_perusahaan` `b` on(`a`.`IdPerusahaan` = `b`.`IdPerusahaan`)) left join `tbl_mas_type_mineral` `c` on(`a`.`IdType` = `c`.`IdType`)) left join `tbl_mas_daerah` `d` on(`a`.`IdDaerah` = `d`.`IdDaerah`)) ORDER BY `a`.`RegDate` AS `DESCdesc` ASC  ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `tbv_tambang`  AS SELECT `a`.`IdTambang` AS `IdTambang`, `b`.`IdPerusahaan` AS `IdPerusahaan`, `b`.`Perusahaan` AS `Perusahaan`, `b`.`AlamatPerusahaan` AS `AlamatPerusahaan`, `c`.`IdType` AS `IdType`, `c`.`Type` AS `Type`, `d`.`IdDaerah` AS `IdDaerah`, `d`.`Daerah` AS `Daerah`, `a`.`Lat` AS `Lat`, `a`.`Long` AS `Long`, `a`.`Lokasi` AS `Lokasi`, `a`.`Luas` AS `Luas`, `a`.`Tahapan` AS `Tahapan`, `a`.`SK` AS `SK`, `a`.`NoSK` AS `NoSK`, `a`.`TAwal` AS `TAwal`, `a`.`TSelesai` AS `TSelesai`, `a`.`Komoditas` AS `Komoditas`, `a`.`Status` AS `Status`, `a`.`Ket` AS `Ket`, `a`.`Foto` AS `Foto`, `a`.`RegDate` AS `RegDate` FROM (((`tbl_mas_tambang` `a` left join `tbl_mas_perusahaan` `b` on(`a`.`IdPerusahaan` = `b`.`IdPerusahaan`)) left join `tbl_mas_type_mineral` `c` on(`a`.`IdType` = `c`.`IdType`)) left join `tbl_mas_daerah` `d` on(`a`.`IdDaerah` = `d`.`IdDaerah`)) ORDER BY `a`.`RegDate` AS `DESCdesc` ASC  ;
 
 --
 -- Indexes for dumped tables
