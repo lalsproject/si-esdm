@@ -2,7 +2,6 @@
   "name": "PHP 7.4 with MariaDB 10",
   "updateContentCommand": "sudo apt-get update",
   "features": {},
-  "forwardPorts": [8080, 3306],
   "postCreateCommand": "bash .devcontainer/setup.sh",
   "customizations": {
     "vscode": {
