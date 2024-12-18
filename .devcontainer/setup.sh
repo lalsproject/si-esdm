@@ -15,15 +15,6 @@ sudo apt-get install -y mariadb-server mariadb-client
 # Start MariaDB service
 sudo /etc/init.d/mysql start
 
-
-# Set up MariaDB root password and database
-sudo mysql -e "UPDATE mysql.user SET Password = PASSWORD('rootpassword') WHERE User = 'root';"
-sudo mysql -e "DELETE FROM mysql.user WHERE User='';"
-sudo mysql -e "CREATE DATABASE app_db;"
-sudo mysql -e "CREATE USER 'app_user'@'localhost' IDENTIFIED BY 'app_password';"
-sudo mysql -e "GRANT ALL PRIVILEGES ON app_db.* TO 'app_user'@'localhost';"
-sudo mysql -e "FLUSH PRIVILEGES;"
-
 # Install Apache and set up PHP
 sudo apt-get install -y apache2 libapache2-mod-php7.4
 sudo /etc/init.d/apache2 restart
