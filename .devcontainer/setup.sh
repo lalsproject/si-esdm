@@ -13,8 +13,8 @@ sudo apt-get install -y php7.4 php7.4-cli php7.4-mysql php7.4-xml php7.4-curl ph
 sudo apt-get install -y mariadb-server mariadb-client
 
 # Start MariaDB service
-sudo systemctl start mariadb
-sudo systemctl enable mariadb
+sudo /etc/init.d/mysql start
+
 
 # Set up MariaDB root password and database
 sudo mysql -e "UPDATE mysql.user SET Password = PASSWORD('rootpassword') WHERE User = 'root';"
@@ -26,12 +26,11 @@ sudo mysql -e "FLUSH PRIVILEGES;"
 
 # Install Apache and set up PHP
 sudo apt-get install -y apache2 libapache2-mod-php7.4
-sudo systemctl start apache2
-sudo systemctl enable apache2
+sudo /etc/init.d/apache2 restart
 
 # Enable mod_rewrite for Apache
 sudo a2enmod rewrite
-sudo systemctl restart apache2
+sudo /etc/init.d/apache2 restart
 
 # Move project to Apache web directory
 sudo rm -rf /var/www/html/*
